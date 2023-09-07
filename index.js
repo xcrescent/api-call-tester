@@ -6,7 +6,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.post("/", (req, res) => {
+app.post("/:id", (req, res) => {
+  console.log(req.params.id);
   console.log(req.body);
   res.json({
     message: "Hello World",
